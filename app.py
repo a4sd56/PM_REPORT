@@ -10,7 +10,10 @@ st.set_page_config(page_title="금정구 킥보드 심층 분석", layout="wide"
 
 @st.cache_data
 def load_and_merge_data():
-    all_files = glob.glob("*.csv")
+    all_files = glob.glob("*.csv") + glob.glob("*.CSV")
+    if not all_files:
+        return pd.DataFrame() # 파일이 없으면 빈 데이터프레임 반환
+        
     df_list = []
     for filename in all_files:
         try:
