@@ -55,7 +55,7 @@ try:
         m1, m2, m3, m4 = st.columns(4)
         m1.metric("누적 사고", f"{len(filtered_df)}건")
         serious = len(filtered_df[filtered_df['사고내용'].str.contains('사망|중상')])
-        m2.metric("사고 치명률", f"{(serious/len(filtered_df)*100):.1f}%" if len(filtered_df)>0 else "0%")
+        m2.metric("중상 사고 확률", f"{(serious/len(filtered_df)*100):.1f}%" if len(filtered_df)>0 else "0%")
         
         # 가해운전자 연령대 최빈값 추출
         if '가해운전자 연령대' in filtered_df.columns:
