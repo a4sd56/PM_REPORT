@@ -2,4 +2,7 @@ streamlit
 pandas
 plotly
 folium
-streamlit-folium
+streamlit_folium
+requests
+beautifulsoup4
+lxml
